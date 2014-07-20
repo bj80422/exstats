@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exede Statistics</title>
+<script type="text/javascript">
+
+var timer = setTimeout(function(){mouseClick('daily')}, 15000);
+
+function mouseClick(view)
+{
+  clearTimeout(timer);
+  var graphs = [ "exede", "tria-power", "tria-temperature", "surfbeam2-packets",
+                 "surfbeam2-bytes", "surfbeam2-quality", "surfbeam2-losssync",
+                 "surfbeam2-cable" ];  
+  for (var i = 0; i < graphs.length - 1; i++)
+  {
+    document.getElementById(graphs[i]).src=graphs[i] + "-" + view + ".png" + "?" + Math.random();
+  }
+ timer = setTimeout(function(){mouseClick(view)}, 15000);
+}
+
+</script>
+</head>
+<h1>Exede Statistics</h1>
+<a href="#" onclick="mouseClick('daily');">Daily</a>
+-
+<a href="#" onclick="mouseClick('weekly');">Weekly</a>
+-
+<a href="#" onclick="mouseClick('monthly');">Monthly</a>
+-
+<a href="#" onclick="mouseClick('annual');">Annual</a>
+<p>
+<img id="exede" src="exede-daily.png">
+<p>
+<img id="tria-power" src="tria-power-daily.png">
+<p>
+<img id="tria-temperature" src="tria-temperature-daily.png">
+<p>
+<img id="surfbeam2-packets" src="surfbeam2-packets-daily.png">
+<p>
+<img id="surfbeam2-bytes" src="surfbeam2-bytes-daily.png">
+<p>
+<img id="surfbeam2-quality" src="surfbeam2-quality-daily.png">
+<p>
+<img id="surfbeam2-losssync" src="surfbeam2-losssync-daily.png">
+<p>
+<img id="surfbeam2-cable" src="surfbeam2-cable-daily.png">
+</html>
