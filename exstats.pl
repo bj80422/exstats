@@ -86,10 +86,7 @@ sub collect
   {
   $rrd->create
     (
-      # data that comes from exget
-      #usage => "GAUGE",
-      #cap => "GAUGE",
-      # data that comes from sb2get
+      # data that comes from SurfBeam 2 modem
       triaTxIFPower => "GAUGE",
       triaRFPower => "GAUGE",
       triaTemperature => "GAUGE",
@@ -167,7 +164,7 @@ sub getDataUsage
   {
     $rrd->create
     (
-      # data that comes from exget
+      # data that comes from Exede web portal
       usage => "GAUGE",
       cap => "GAUGE",
     );
